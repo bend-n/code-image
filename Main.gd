@@ -57,7 +57,7 @@ func _on_message_create(bot: DiscordBot, message: Message, _channel: Dictionary)
 		code = lines.join("\n")
 
 	code = code.strip_edges()
-	
+
 	if !code:
 		return
 
@@ -68,5 +68,10 @@ func _on_message_create(bot: DiscordBot, message: Message, _channel: Dictionary)
 	yield(get_tree(), "idle_frame")
 	var img: Image = viewport.save()
 	bot.reply(
-		message, {"files": [{"name": "code.png", "media_type": "image/png", "data": img.save_png_to_buffer()}]}
+		message,
+		"Code:",
+		{
+			"files": [{"name": "code.png", "media_type": "image/png", "data": img.save_png_to_buffer()}],
+			"allowed_mentions": {"parse": [], "users": []}
+		}
 	)
