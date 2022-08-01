@@ -1,3 +1,44 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
 
-[node name="Main" type="Node2D"]
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://main.theme" type="Theme" id=2]
+[ext_resource path="res://CodeDisplay.gd" type="Script" id=3]
+[ext_resource path="res://CodeViewport.gd" type="Script" id=4]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CodeViewport" type="Viewport" parent="."]
+unique_name_in_owner = true
+size = Vector2( 500, 500 )
+transparent_bg = true
+handle_input_locally = false
+usage = 1
+render_target_v_flip = true
+render_target_update_mode = 3
+script = ExtResource( 4 )
+
+[node name="Code" type="TextEdit" parent="CodeViewport"]
+unique_name_in_owner = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 300, 140 )
+theme = ExtResource( 2 )
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+syntax_highlighting = true
+show_line_numbers = true
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource( 3 )
+
+[connection signal="resized" from="CodeViewport/Code" to="CodeViewport/Code" method="_resized"]
