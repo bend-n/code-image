@@ -116,10 +116,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot Template"
+config/name="code image"
 run/main_scene="res://Main.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="GodotTemplate"
+config/custom_user_dir_name="codeimg"
 
 [debug]
 

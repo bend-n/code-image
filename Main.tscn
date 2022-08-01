@@ -30,7 +30,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 300, 140 )
 theme = ExtResource( 2 )
-text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 syntax_highlighting = true
 show_line_numbers = true
 context_menu_enabled = false
@@ -40,5 +39,3 @@ selecting_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 script = ExtResource( 3 )
-
-[connection signal="resized" from="CodeViewport/Code" to="CodeViewport/Code" method="_resized"]
